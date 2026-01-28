@@ -1,0 +1,19 @@
+<div class="product-list">
+  <h2>Products</h2>
+  <div class="products-grid">
+    @for (product of products(); track product.id) {
+      <div class="product-card">
+        <h3>{{ product.name }}</h3>
+        <p class="price">${{ product.price }}</p>
+        <p class="description">{{ product.description }}</p>
+        <button 
+          (click)="addToCart(product)"
+          class="btn-add-to-cart"
+          [attr.aria-label]="'Add ' + product.name + ' to cart'"
+        >
+          Add to Cart
+        </button>
+      </div>
+    }
+  </div>
+</div>

@@ -1,0 +1,241 @@
+.cart-page-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.cart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  border-bottom: 2px solid #eee;
+  padding-bottom: 20px;
+}
+
+.cart-header h1 {
+  margin: 0;
+  color: #333;
+  font-size: 28px;
+}
+
+.btn-back {
+  padding: 10px 15px;
+  background-color: #f0f0f0;
+  color: #333;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+  font-weight: 500;
+}
+
+.btn-back:hover {
+  background-color: #e0e0e0;
+}
+
+.btn-back:focus {
+  outline: 2px solid #007bff;
+  outline-offset: 2px;
+}
+
+.empty-cart {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.empty-cart p {
+  font-size: 18px;
+  color: #999;
+  margin-bottom: 20px;
+}
+
+.btn-continue-shopping {
+  display: inline-block;
+  padding: 12px 30px;
+  background-color: var(--bright-blue);
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+.btn-continue-shopping:hover {
+  background-color: #005ba3;
+}
+
+.btn-continue-shopping:focus {
+  outline: 2px solid var(--bright-blue);
+  outline-offset: 2px;
+}
+
+.cart-content {
+  display: grid;
+  grid-template-columns: 1fr 350px;
+  gap: 30px;
+}
+
+@media (max-width: 768px) {
+  .cart-content {
+    grid-template-columns: 1fr;
+  }
+}
+
+.cart-items-section h2 {
+  margin: 0 0 20px 0;
+  color: #333;
+  font-size: 20px;
+}
+
+.items-list {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.cart-item-row {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  gap: 20px;
+  padding: 20px;
+  border-bottom: 1px solid #eee;
+  align-items: center;
+}
+
+.cart-item-row:last-child {
+  border-bottom: none;
+}
+
+.item-details h3 {
+  margin: 0 0 8px 0;
+  color: #333;
+  font-size: 16px;
+}
+
+.item-details .description {
+  margin: 0;
+  color: #999;
+  font-size: 13px;
+}
+
+.item-price {
+  font-size: 18px;
+  font-weight: bold;
+  color: #27ae60;
+  white-space: nowrap;
+}
+
+.item-actions {
+  text-align: right;
+}
+
+.btn-remove {
+  padding: 8px 12px;
+  background-color: #ff6b6b;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+.btn-remove:hover {
+  background-color: #ff5252;
+}
+
+.btn-remove:focus {
+  outline: 2px solid #ff6b6b;
+  outline-offset: 2px;
+}
+
+.cart-summary-section {
+  position: sticky;
+  top: 20px;
+}
+
+.summary-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  background-color: #f9f9f9;
+}
+
+.summary-card h2 {
+  margin: 0 0 20px 0;
+  color: #333;
+  font-size: 18px;
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 0;
+  border-bottom: 1px solid #eee;
+  color: #666;
+}
+
+.summary-row:last-of-type {
+  border-bottom: none;
+}
+
+.summary-row.total {
+  border-top: 2px solid #333;
+  border-bottom: none;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  font-weight: bold;
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.summary-row.total span:last-child {
+  color: #27ae60;
+}
+
+.btn-checkout {
+  width: 100%;
+  padding: 14px;
+  background-color: var(--bright-blue);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-bottom: 10px;
+}
+
+.btn-checkout:hover {
+  background-color: #005ba3;
+}
+
+.btn-checkout:focus {
+  outline: 2px solid var(--bright-blue);
+  outline-offset: 2px;
+}
+
+.btn-continue-shopping-secondary {
+  display: block;
+  padding: 12px;
+  text-align: center;
+  background-color: white;
+  color: var(--bright-blue);
+  text-decoration: none;
+  border: 1px solid var(--bright-blue);
+  border-radius: 4px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.btn-continue-shopping-secondary:hover {
+  background-color: #f0f7ff;
+}
+
+.btn-continue-shopping-secondary:focus {
+  outline: 2px solid var(--bright-blue);
+  outline-offset: 2px;
+}

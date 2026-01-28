@@ -1,21 +1,21 @@
-import { Component, signal, ChangeDetectionStrategy, OnInit, inject, AfterViewInit } from '@angular/core';
-import { NavigationEnd, Router, RouterOutlet } from '@angular/router';
-import { AuthStore } from './services/auth.store'; 
-import { filter } from 'rxjs';
+import { Component, signal, inject } from '@angular/core';
+import { Router, NavigationEnd, RouterModule } from '@angular/router';
+import { CommonModule } from '@angular/common';
+import { filter } from 'rxjs/operators';
 
 @Component({
   selector: 'app-root',
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [RouterOutlet],
+  standalone: true,
+  imports: [CommonModule, RouterModule],
   templateUrl: './app.html',
-  styleUrl: './app.css'
+  styleUrls: ['./app.css']
 })
-export class App {
-  protected readonly title = signal('ecart21-app');
-
+export class AppComponent {
+ 
+  title = signal('eCart21');
   isAuthRoute = signal(false);
-  isLoggedIn = signal(false);
-    private router = inject(Router);
+   isLoggedIn = signal(false);
+  private router = inject(Router);
 
   constructor() {
     this.router.events
@@ -25,8 +25,8 @@ export class App {
         this.isAuthRoute.set(authRoutes.some(route => event.url.includes(route)));
       });
 
-    //const token = localStorage.getItem('authToken');
-    //this.isLoggedIn.set(!!token);
+       const token = localStorage.getItem('authToken');
+     this.isLoggedIn.set(!!token);
 
     this.router.events
       .pipe(filter(event => event instanceof NavigationEnd))
@@ -34,12 +34,11 @@ export class App {
         const authRoutes = ['/sign-in', '/sign-up'];
         this.isAuthRoute.set(authRoutes.some(route => event.url.includes(route)));
       });
-  }  
+  }     
 
   logout() {
     localStorage.removeItem('authToken');
     this.isLoggedIn.set(false);
     this.router.navigate(['/sign-in']);
   } 
-
 }

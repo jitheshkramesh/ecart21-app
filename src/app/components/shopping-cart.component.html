@@ -1,0 +1,31 @@
+<div class="shopping-cart-widget">
+  <h2>Shopping Cart</h2>
+  
+  @if (items().length === 0) {
+    <p class="empty-message">Your cart is empty</p>
+  } @else {
+    <div class="cart-summary">
+      <div class="item-count">
+        Items: <span class="count">{{ items().length }}</span>
+      </div>
+      <div class="total-price">
+        Total: <span class="amount">${{ total() | number: '1.2-2' }}</span>
+      </div>
+    </div>
+    
+    <div class="quick-items">
+      <h3>Recent Items</h3>
+      @for (item of items().slice(0, 3); track item.id) {
+        <div class="cart-item">
+          <span class="item-name">{{ item.name }}</span>
+          <span class="item-price">${{ item.price }}</span>
+        </div>
+      }
+      @if (items().length > 3) {
+        <p class="more-items">+{{ items().length - 3 }} more items</p>
+      }
+    </div>
+    
+    <a routerLink="/cart" class="btn-view-cart">View Full Cart</a>
+  }
+</div>
